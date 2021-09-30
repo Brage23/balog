@@ -5,6 +5,10 @@ import (
 	"time"
 )
 
+func Log(a ...interface{}) {
+	logPrint(a...)
+}
+
 func currtime() string {
 	return fmt.Sprintf("[%d-%d-%d %d:%d:%d.%d]", time.Now().Year(), time.Now().Month(), time.Now().Day(),
 		time.Now().Hour(), time.Now().Minute(), time.Now().Second(), time.Now().Nanosecond())
@@ -16,8 +20,8 @@ func log(title string, a ...interface{}) {
 	fmt.Println(a...)
 }
 
-func logPanic(a ...interface{}) {
-	log("Panic", a...)
+func logPrint(a ...interface{}) {
+	log("Log", a...)
 }
 
 func logError(a ...interface{}) {
